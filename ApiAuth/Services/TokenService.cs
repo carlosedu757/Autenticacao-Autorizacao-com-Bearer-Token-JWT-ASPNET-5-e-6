@@ -15,8 +15,8 @@ namespace ApiAuth.Services
             {
                 Subject = new ClaimsIdentity(new[]
                 {
-                    new Claim(ClaimType.Name, user.Username), 
-                    new Claim(ClaimType.Role, user.Role) 
+                    new Claim(ClaimTypes.Name, user.Username), 
+                    new Claim(ClaimTypes.Role, user.Role) 
                 }),
                 Expires = DateTime.UtcNow.AddHours(8),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
